@@ -9,12 +9,13 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class AdminLog {
 
 	public JFrame AdLog;
 	private JTextField Usertext;
-	private JTextField Passtext;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -68,10 +69,10 @@ public class AdminLog {
 		lblAdminPass.setBounds(120, 174, 76, 19);
 		AdLog.getContentPane().add(lblAdminPass);
 		
-		Passtext = new JTextField();
-		Passtext.setColumns(10);
-		Passtext.setBounds(205, 171, 148, 36);
-		AdLog.getContentPane().add(Passtext);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(205, 166, 148, 36);
+		AdLog.getContentPane().add(passwordField);
+		
 		
 		//Login Button
 		JButton btnAdminLog = new JButton("Login");
@@ -80,25 +81,40 @@ public class AdminLog {
 			public void actionPerformed(ActionEvent e) {
 				
 				String username = Usertext.getText();
-				String password = Passtext.getText();
+				String password = passwordField.getText();
 				
 				if (username.contains("Admin_01")&& password.contains("AdminOne")) {
 					
 					Usertext.setText(null);
-					Passtext.setText(null);
+					passwordField.setText(null);
+					
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					
+					AdminLogPromt alp = new AdminLogPromt();
+					alp.adminPromt.setVisible(true);
+					AdLog.dispose();
 					
 				} else if (username.contains("Admin_02")&& password.contains("AdminTwo")) {
 					
 					Usertext.setText(null);
-					Passtext.setText(null);
+					passwordField.setText(null);
+					
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					
+					AdminLogPromt alp = new AdminLogPromt();
+					alp.adminPromt.setVisible(true);
+					AdLog.dispose();
 					
 				} else if (username.contains("Admin_03")&& password.contains("AdminThree")) {
 					
 					Usertext.setText(null);
-					Passtext.setText(null);
+					passwordField.setText(null);
+					
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					
+					AdminLogPromt alp = new AdminLogPromt();
+					alp.adminPromt.setVisible(true);
+					AdLog.dispose();
 					
 				} 
 				else 
@@ -123,5 +139,6 @@ public class AdminLog {
 		});
 		btnBack.setBounds(142, 247, 117, 29);
 		AdLog.getContentPane().add(btnBack);
+		
 	}
 }
