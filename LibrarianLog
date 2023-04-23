@@ -10,12 +10,13 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JPasswordField;
 
 public class LibrarianLog {
 
 	public JFrame LibLog;
 	private JTextField LibUser;
-	private JTextField LibPass;
+	private JPasswordField passwordField;
 
 	/**
 	 * Launch the application.
@@ -69,10 +70,9 @@ public class LibrarianLog {
 		lblLibPass.setBounds(120, 183, 76, 19);
 		LibLog.getContentPane().add(lblLibPass);
 		
-		LibPass = new JTextField();
-		LibPass.setColumns(10);
-		LibPass.setBounds(201, 175, 148, 36);
-		LibLog.getContentPane().add(LibPass);
+		passwordField = new JPasswordField();
+		passwordField.setBounds(201, 175, 148, 36);
+		LibLog.getContentPane().add(passwordField);
 		
 		//Librarian Login Button
 		JButton btnLibLog = new JButton("Login");
@@ -81,22 +81,35 @@ public class LibrarianLog {
 			public void actionPerformed(ActionEvent e) {
 				
 				String username = LibUser.getText();
-				String password = LibPass.getText();
+				String password = passwordField.getText();
 				
-				if (username.contains("Librarian_01")&& password.contains("LibrarianOne")) {
+				if (username.contains("Librarian_01")&& password.contains("LibOne")) {
 					LibUser.setText(null);
-					LibPass.setText(null);
+					passwordField.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
 					
-				} else if (username.contains("Librarian_02")&& password.contains("LibrarianTwo")) {
+					LibrarianLogPrompt llp = new LibrarianLogPrompt();
+					llp.LibPrompt.setVisible(true);
+					LibLog.dispose();
+					
+				} else if (username.contains("Librarian_02")&& password.contains("LibTwo")) {
 					LibUser.setText(null);
-					LibPass.setText(null);
+					passwordField.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
 					
-				} else if (username.contains("Librarian_03")&& password.contains("LibrarianThree")) {
+					LibrarianLogPrompt llp = new LibrarianLogPrompt();
+					llp.LibPrompt.setVisible(true);
+					LibLog.dispose();
+					
+				} else if (username.contains("Librarian_03")&& password.contains("LibThree")) {
 					LibUser.setText(null);
-					LibPass.setText(null);
+					passwordField.setText(null);
 					JOptionPane.showMessageDialog(null,"Succesfully login");
+					
+					LibrarianLogPrompt llp = new LibrarianLogPrompt();
+					llp.LibPrompt.setVisible(true);
+					LibLog.dispose();
+					
 				} 
 				else 
 				{
@@ -118,6 +131,7 @@ public class LibrarianLog {
 		});
 		btnBack.setBounds(139, 257, 117, 29);
 		LibLog.getContentPane().add(btnBack);
+		
 	}
 
 }
