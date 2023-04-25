@@ -110,11 +110,15 @@ public class LibrarianLog {
 					llp.LibPrompt.setVisible(true);
 					LibLog.dispose();
 					
-				} 
-				else 
-				{
-					JOptionPane.showMessageDialog(null,"Invalid Login Details", "Login Error", JOptionPane.ERROR_MESSAGE);
-				}
+				 } else if (LibUser.getText() != username && passwordField.getText() != password) {
+				
+				      JOptionPane.showMessageDialog(null,"Invalid login credentials", "Login Error", JOptionPane.ERROR_MESSAGE);
+				
+			         }
+                                   else 
+				 {
+				      JOptionPane.showMessageDialog(null,"Account doesn't exist", "Login Error", JOptionPane.ERROR_MESSAGE);
+				 }
 			}
 		});
 		btnLibLog.setBounds(294, 257, 117, 29);
