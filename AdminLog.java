@@ -116,12 +116,17 @@ public class AdminLog {
 					alp.adminPromt.setVisible(true);
 					AdLog.dispose();
 					
-				} 
-				else 
-				{
-					JOptionPane.showMessageDialog(null,"Invalid Login Details", "Login Error", JOptionPane.ERROR_MESSAGE);
+				} else if (Usertext.getText() != username && passwordField.getText() != password) {
+						
+					JOptionPane.showMessageDialog(null,"Invalid login credentials", "Login Error", JOptionPane.ERROR_MESSAGE);
+					
 				}
+                                  else 
+  				{
+  					JOptionPane.showMessageDialog(null,"Account doesn't exist", "Login Error", JOptionPane.ERROR_MESSAGE);
+  				}
 			}
+		}
 		});
 		btnAdminLog.setBounds(292, 247, 117, 29);
 		AdLog.getContentPane().add(btnAdminLog);
