@@ -155,7 +155,7 @@ public class LibrarianLogPrompt {
 		            if (bookNum >= 0 && bookNum < bookList.length && bookList[bookNum] > 0) {
 		                bookList[bookNum]--;
 		                
-		                JOptionPane.showMessageDialog(LibPrompt, "Book borrowed successfully!");
+		                JOptionPane.showMessageDialog(LibPrompt, "Book has been successfully borrowed");
 		            } 
 		            else if
 		            
@@ -166,7 +166,7 @@ public class LibrarianLogPrompt {
 		            }
 		      
 		            else {
-		                JOptionPane.showMessageDialog(LibPrompt, "Book not available.");
+		                JOptionPane.showMessageDialog(LibPrompt, "No copies left");
 		            }
 		        }
 		    }
